@@ -1,0 +1,12 @@
+﻿.suggestion-box {
+    margin-top: 5px;
+    margin-bottom: 10px;
+    color: #737373;
+}
+    .suggestion-box .suggestion{}
+    .suggestion-box .suggested-action {
+        color: #0984b5;
+        border-bottom: 1px solid;
+        padding-bottom: 3px;
+        cursor: pointer;
+    }

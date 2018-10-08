@@ -1,0 +1,20 @@
+{
+  "short_name": "ManyaJS",
+  "name": "ManyaJS : Form Validator",
+  "icons": [
+    {
+      "src": "images/icon.gif",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "images/icon.gif",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "start_url": "/ManyaJS/site/index.html",
+  "background_color": "#28b473",
+  "theme_color": "#28b473",
+  "display": "standalone"
+}

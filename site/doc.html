@@ -1,0 +1,166 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Form Validation Sample</title>
+
+    <link rel="icon" href="icon.png" />
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="style/custom.css">
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-10 col-md-offset-1">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        Form Validation Documentation
+                        <a href="index.html" class="btn btn-info btn-sm pull-right">View Live Demo</a>
+                    </div>
+                    <div class="panel-body">
+                        <h3>Dependecies</h3>
+                        <ul>
+                            <li>https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css</li>
+                            <li>https://code.jquery.com/jquery-3.2.1.min.js</li>
+                        </ul>
+                        <hr />
+                        <h3>How form validation work?</h3>
+                        <p>Form validation works in simple 2 steps</p>
+                        <ul>
+                            <li>Configuration (Wiring up with HTML)</li>
+                            <li>Scripting</li>
+                        </ul>
+                        <hr />
+                        <h3>Step 1 : Configuration (Wiring up with HTML)</h3>
+                        <p>To make a filed required simply add <span class="code-snippet">val-type="text"</span> attribute to your html</p>
+                        <div class="code">
+<xmp>
+    <input type="text" class="form-control" name="name" val-type="text" placeholder="John">
+</xmp>
+                        </div>
+                        <p>for different type of form element we have differnt val-types as follows...</p>
+                        <table class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <th>Element Type</th>
+                                    <th>Val-Type</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        input [type=text,email,date,number]<br />
+                                        textarea
+                                    </td>
+                                    <td>val-type="text"</td>
+                                </tr>
+                                <tr>
+                                    <td>input [type=file]</td>
+                                    <td>val-type="file"</td>
+                                </tr>
+                                <tr>
+                                    <td>input [type=radio]</td>
+                                    <td>val-type="radio"</td>
+                                </tr>
+                                <tr>
+                                    <td>input [type=checkbox]</td>
+                                    <td>val-type="check"</td>
+                                </tr>
+                                <tr>
+                                    <td>select</td>
+                                    <td>val-type="select"</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <p>
+                            To display <strong>error</strong> we need to add a <strong>< span class="help-block" ></strong> 
+                        </p>
+                        <div class="code">
+<xmp>
+    <div class="form-group">
+        <label class="control-label">First Name</label>
+        <input type="text" class="form-control" name="first name" val-type="text" placeholder="John">
+        <span class="help-block"></span>
+    </div>
+</xmp>
+                        </div>
+                        <p>If the span block is not sibling of the element we want to validate then we need to add  an additional attribute <span class="code-snippet">with-parent="yes"</span></p>
+                        <div class="code">
+<xmp>
+    <div class="form-group">
+        <label for="txtAcceptTandC">
+            <input type="checkbox" id="txtAcceptTandC" name="Term and Condiation" val-type="check" with-parent="yes"> Accept Term and Conditions
+        </label>
+        <span class="help-block"></span>
+    </div>
+</xmp>
+                        </div>
+                        <p>For Regualr Expression, you simply need to add one more additional attribute <span class="code-snippet">regex="email"</span></p>
+                        <div class="code">
+<xmp>
+    <div class="form-group">
+        <label class="control-label">Email Address</label>
+        <input type="text" class="form-control" name="email address" val-type="text" regex="email" placeholder="sample@domain.com">
+        <span class="help-block"></span>
+    </div>
+</xmp>
+                        </div>
+                        <p>and in <span class="code-snippet">verifyInput($input, $type){...}</span> you need to specify email regex as shown below</p>
+                        <div class="code">
+<xmp>
+    function verifyInput($input, $type) {
+        var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+                              
+        switch ($type) {
+            case 'email':
+            return mailformat.test($input);
+            break;
+                                
+        default:
+            return false;
+            break;
+        }
+    }
+</xmp>
+                        </div>
+                        <hr />
+                        <h3>Step 2 : Scripting</h3>
+                        <p>Give Id to your form and the submit button</p>
+                        <div class="code">
+<xmp>
+    <form class="inline-form" id="sampleForm">
+        <div class="row">...</div>
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="form-group">
+                    <button type="submit" id="btnAdd" class="btn btn-default">Add</button>
+                </div>
+            </div>
+        </div>
+    </form>
+</xmp>
+                        </div>
+                        <p>
+                            Once you are done, you just need to call the 
+                            <span class="code-snippet">formValidator</span>
+                        </p>
+                        <div class="code">
+<xmp>
+    $('#btnAdd').on('click', function () {
+        if (!formValidator('#sampleForm')) {
+            return false;
+        }
+    });
+</xmp>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

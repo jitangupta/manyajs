@@ -1,0 +1,47 @@
+body {
+    padding-top: 15px;
+}
+
+.btn-sm {
+    padding: 0px 10px;
+}
+
+.code {
+    background: #EEEEEE;
+    border: 1px solid #BDBDBD;
+    border-radius: 5px;
+}
+
+xmp {
+    margin: 0px;
+    padding: 10px;
+    margin-top: -20px;
+    white-space: pre-wrap;
+}
+
+.code-snippet {
+    font-weight: 600;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+    .code-snippet:before {
+        content: '“';
+        font-size: 25px;
+        position: absolute;
+        margin-top: -7px;
+        margin-left: -12px;
+        color: #BDBDBD;
+    }
+
+    .code-snippet:after {
+        content: '”';
+        font-size: 25px;
+        position: absolute;
+        margin-top: -7px;
+        color: #BDBDBD;
+    }
+
+p {
+    margin-top: 10px;
+}

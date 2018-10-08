@@ -1,0 +1,155 @@
+﻿<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>ManyaJS : Helps you validate data</title>
+
+    <link rel="icon" href="images/icon.gif" />
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#E6E6E6" />
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link href="style/manya.css" rel="stylesheet" />
+    <link rel="stylesheet" href="style/custom.css">
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-10 col-md-offset-1">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        Form Sample
+                        <a href="doc.html" class="btn btn-info btn-sm pull-right">View Doc</a>
+                    </div>
+                    <div class="panel-body">
+                        <!--Form-->
+                        <form class="inline-form" id="sampleForm">
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <label class="control-label">First Name</label>
+                                        <input type="text" class="form-control" name="first name" val-type="text" val-error="Your name is required" regex-error="Your name can contain only charactors" regex="name" placeholder="John">
+                                        <span class="help-block"></span>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <label class="control-label">Last Name</label>
+                                        <input type="text" name="last name" class="form-control" id="txtLastName" regex="name" placeholder="Doe">
+                                        <span class="help-block"></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row"> 
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <label class="control-label">Email Address</label>
+                                        <input type="email" class="form-control" name="email address" val-type="text" regex="email" value="" suggestion="email" placeholder="sample@domain.com">
+                                        <div class="suggestion-box">
+                                            <span class="suggestion"></span>
+                                            <span class="suggested-action"></span>
+                                        </div>
+                                        <span class="help-block"></span>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <label class="control-label">Mobile </label>
+                                        <input type="text" class="form-control" name="mobile" regex="mobile" placeholder="9000000000">
+                                        <span class="help-block"></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <label class="control-label">Country</label>
+                                        <select class="form-control" val-type="select" name="country" id="ddlCountry">
+                                            <option>Select</option>
+                                            <option>India</option>
+                                        </select>
+                                        <span class="help-block"></span>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <label class="control-label">Profile Image</label>
+                                        <input type="file" val-type="file" regex="image" name="profile image" id="fileProfielImage">
+                                        <span class="help-block"></span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <label class="control-label">DOB</label>
+                                        <input type="date" max="2000-03-15" min="1960-03-14" val-type="text" regex="dob" class="form-control" id="txtDOB" placeholder="Date of Birth" name="dob">
+                                        <span class="help-block"></span>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <label class="control-label">Gender</label>
+                                        <div>
+                                            <label for="rdbMale">
+                                                <input type="radio" name="gender" id="rdbMale" with-parent="yes" val-type="radio">Male
+                                            </label>
+                                            <label for="rdbFemale">
+                                                <input type="radio" name="gender" id="rdbFemale" with-parent="yes" val-type="radio">Female
+                                            </label>
+                                            <label for="rdbTransgender">
+                                                <input type="radio" name="gender" id="rdbTransgender" with-parent="yes" val-type="radio">Transgender
+                                            </label>
+                                            <span class="help-block"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <div class="form-group">
+                                        <label class="control-label">Your Bio</label>
+                                        <textarea class="form-control col-sm-8" name="bio" placeholder="Tell us about yourself"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <div class="form-group">
+                                        <label for="txtAcceptTandC">
+                                            <input type="checkbox" id="txtAcceptTandC" name="Term and Condiation" val-type="check" with-parent="yes"> Accept Term and Conditions
+                                        </label>
+                                        <span class="help-block"></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <div class="form-group">
+                                        <button type="submit" id="btnSubmit" class="btn btn-default">Submit</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--Scripts-->
+    <!--Scripts-->
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"
+            integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+            crossorigin="anonymous"></script>
+    <script src="../dist/manya.js"></script>
+
+    <!--Test Scripts-->
+    <script>
+        $('#btnSubmit').manya();
+    </script>
+</body>
+</html>
