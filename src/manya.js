@@ -283,7 +283,7 @@
         return isValid;
     };
 
-    //regex check
+    // Regex check
     Manya.prototype.verifyInput = function verifyInput($input, $type) {
 
         if (this.settings.regex[$type] !== undefined) {
@@ -298,7 +298,7 @@
         }
     };
 
-    //show error
+    // Show error
     Manya.prototype.ShowError = function ShowError(element, error, isErrorWithParent) {
         if (isErrorWithParent !== undefined) {
             $(element).parent().siblings('.help-block').text(error);
@@ -308,7 +308,8 @@
             $(element).parent().addClass('has-error');
         }
     };
-    //remove error
+
+    // Remove error
     Manya.prototype.RemoveError = function RemoveError(element, isErrorWithParent) {
         if (isErrorWithParent !== undefined) {
             $(element).parent().siblings('.help-block').text('');
@@ -319,7 +320,7 @@
         }
     };
 
-    //show suggestion
+    // Show suggestion
     Manya.prototype.ShowSuggestion = function ShowSuggestion($element, suggestion, domain) {
         let widget = this;
         let $sugBox = $element.siblings('.suggestion-box');
@@ -332,7 +333,8 @@
             widget.RemoveSuggestion($sugBox);
         });
     };
-    //remove suggestion
+
+    // Remove suggestion
     Manya.prototype.RemoveSuggestion = function RemoveSuggestion($sugBox) {
         $sugBox.children().text('');
     };

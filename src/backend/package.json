@@ -1,0 +1,23 @@
+{
+  "name": "manyajs",
+  "version": "1.0.0",
+  "description": "ManyaJS is an open source form validator plugin based on jQuery",
+  "main": "manya.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jitangupta/manyajs.git"
+  },
+  "keywords": [
+    "validation",
+    "sanitization"
+  ],
+  "author": "Jitan Gupta, Apoorva Kumar",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jitangupta/manyajs/issues"
+  },
+  "homepage": "https://github.com/jitangupta/manyajs#readme"
+}
